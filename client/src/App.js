@@ -10,7 +10,7 @@ const App = () => {
         <div>
           <Switch>
             {/* <Route path="/" component={login} exact></Route> */}
-            <Route path="/home" component={UserHome} exact></Route>
+            <Route path="/" component={UserHome} exact></Route>
             <Route path="/account" component={UserAccount} exact></Route>
             {/* <Route path="/doctorHome" component={HomePage} exact></Route> */}
             {/* <Route path="/NurseHome" component={HomePage} exact></Route> */}
