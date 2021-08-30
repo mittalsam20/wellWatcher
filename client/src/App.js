@@ -2,12 +2,14 @@ import "./App.css";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import UserHome from "./pages/userhome/userhome";
 import UserAccount from "./pages/useraccount/useraccount";
+import NavBar from "./components/navbar/navbar";
 
 const App = () => {
   return (
     <>
       <BrowserRouter>
         <div>
+          <NavBar />
           <Switch>
             {/* <Route path="/" component={login} exact></Route> */}
             <Route path="/" component={UserHome} exact></Route>
