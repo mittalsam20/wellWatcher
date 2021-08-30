@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Quicksand');
+* {
+    font-family: 'quicksand', Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+.resetcont {
+    position: relative;
+    width: 400px;
+    height: auto;
+    margin-top: 30px;
+    background: #fff;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.resetcont button {
+    cursor: pointer;
+    position: relative;
+    text-transform: capitalize;
+    font-size: 1em;
+    z-index: 2;
+    outline: none;
+    background: #fff;
+    transition: 0.2s;
+}
+
+.resetcont .btn {
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+    font-size: 1.2em;
+    transition: 0.5s;
+    margin-bottom: 0.5em;
+    margin-top: 0.5em;
+}
+
+.resetcont .extra {
+    background: #3f51b5;
+    color: #fff;
+}
+
+.resetcont form {
+    position: relative;
+    width: 90%;
+    height: auto;
+}
+
+#resetform {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding-bottom: 1em;
+}
+
+#resetform button {
+    margin-top: 0.7em;
+    padding: 0.5em 2em;
+}
+
+.resetcont input {
+    position: relative;
+    width: 100%;
+    font-size: 1em;
+    padding: .7em 1.7em .7em 1em;
+    margin-top: 0.6em;
+    margin-bottom: 0.6em;
+    border-radius: 5px;
+    border: none;
+    background: #ebebeb;
+    outline: none;
+    font-weight: bold;
+    transition: 0.4s;
+}
+
+.resetcont input:focus,
+.resetcont input:active {
+    transform: scaleX(1.02);
+}
+
+.resetcont input::-webkit-input-placeholder {
+    color: #222;
+}
+
+.resetcont p {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.resetcont p a {
+    color: #57b846;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.resetcont p a:hover {
+    color: #222;
+}
+
+.-box-sd-effect:hover {
+    box-shadow: 0 4px 8px hsla(210, 2%, 84%, .2);
+}
+
+@media only screen and (max-width:500px) {
+    .resetcont {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width:400px) {
+    i {
+        display: none!important;
+    }
+}
