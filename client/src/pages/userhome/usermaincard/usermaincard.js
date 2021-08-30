@@ -65,7 +65,7 @@ const pdata = {
   ],
 };
 
-const UserMainCard = () => {
+const UserMainCard = ({ props }) => {
   const { heading, headingColor, first, second, third } = props;
   const classes = useStyles();
   return (
