@@ -9,12 +9,14 @@ const content = {
 
 const UserHome = () => {
   return (
-    <div>
-      <UserMainCard
-        heading="Income"
-        headingColor="green"
-        first={content.monthlyIncome}
-      />
+    <div className="cont">
+      <div className="maincard">
+        <UserMainCard
+          patientName="Pateint Name"
+          headingColor="green"
+          first={content.monthlyIncome}
+        />
+      </div>
     </div>
   );
 };

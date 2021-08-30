@@ -19,6 +19,7 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     flexGrow: 1,
+    fontWeight: 900,
   },
 }));
 
@@ -32,8 +33,9 @@ const NavBar = () => {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
-          <Typography variant="h6" className={classes.title}>
+          <Typography variant="h4" className={classes.title}>
             <img src="/images/logo_w.png" alt="" style={{ width: "8%" }} />
+            WellWatcher
           </Typography>
           <NavLink
             exact
