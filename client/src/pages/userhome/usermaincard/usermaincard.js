@@ -65,7 +65,7 @@ const pdata = {
   ],
 };
 
-const UserMainCard = ({ props }) => {
+const UserMainCard = (props) => {
   const { heading, headingColor, first, second, third } = props;
   const classes = useStyles();
   return (
@@ -97,7 +97,6 @@ const UserMainCard = ({ props }) => {
           <br />
           <div style={{ maxWidth: "100%" }}>
             <Line data={ldata} options={options} />
-            <Doughnut data={pdata} />
           </div>
         </CardContent>
       </Card>
