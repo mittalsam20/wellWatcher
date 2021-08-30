@@ -9,7 +9,7 @@ import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import PropTypes from "prop-types";
-// import AccInfo from "./accinfo";
+import AccInfo from "./accinfo";
 // import ResetPass from "./resetpass";
 // import Nav from "../../components/navbar/nav";
 
@@ -112,6 +112,7 @@ const UserAccount = () => {
         </Tabs>
         <TabPanel value={value} index={0}>
           {/* <AccInfo user={root} /> */}
+          <AccInfo />
         </TabPanel>
         <TabPanel value={value} index={1}>
           {/* <ResetPass user={root} /> */}

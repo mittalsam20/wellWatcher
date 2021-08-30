@@ -1,0 +1,16 @@
+.infocont {}
+
+.infoinside {
+    margin-top: 50px;
+}
+
+.infoentry {
+    display: flex;
+    flex-direction: row;
+}
+
+.infoinside p {
+    margin-right: 50px;
+    margin-bottom: 30px;
+    font-size: 23px;
+}
