@@ -383,7 +383,7 @@ const CallCard = (props) => {
           //   console.log("ss");
           // }}
         >
-          <DeleteIcon />
+          <ArchiveIcon />
         </Button>
 
         <Button

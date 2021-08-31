@@ -87,7 +87,7 @@ const ListOfCalls = () => {
               fontSize: "30px",
             }}
           >
-            Recording's
+            List of Active Patients
           </h3>
         </div>
 
