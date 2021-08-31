@@ -1,4 +1,5 @@
 import UserMainCard from "./usermaincard/usermaincard";
+import HomeGraph from "../../components/homegraph/homegraph";
 import "./userhome.css";
 const content = {
   monthlyIncome: "Monthly Income",
@@ -17,6 +18,14 @@ const UserHome = () => {
           headingColor="green"
           first={content.monthlyIncome}
         />
+      </div>
+      <div className="allgraph">
+        <HomeGraph />
+        <HomeGraph />
+        <HomeGraph />
+        <HomeGraph />
+
+        <HomeGraph />
       </div>
     </div>
   );
