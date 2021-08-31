@@ -1,0 +1,37 @@
+body {
+    /* overflow-y: hidden; */
+    overflow-x: hidden
+}
+
+.loc-container {
+    /* background-color: green; */
+    /* height: 550px; */
+    height: 100vh;
+    max-width: 50vh;
+    min-width: 30vh;
+    overflow-y: scroll;
+    border-right: 1px solid grey;
+    padding-bottom: 80px;
+}
+
+.loc-container::-webkit-scrollbar {
+    display: none;
+}
+
+.loc-container hr {
+    margin: 0;
+    padding: 0;
+    width: 50%;
+    border: solid black 1px;
+    /* border: 0ch black solid; */
+}
+
+.loc {
+    /* position: sticky; */
+    /* background-color: red; */
+    margin-bottom: 30px;
+}
+
+.loc h3 {
+    text-align: center;
+}
