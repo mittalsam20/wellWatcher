@@ -1,0 +1,10 @@
+.cont {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.maincard {
+    min-width: 1400px;
+}

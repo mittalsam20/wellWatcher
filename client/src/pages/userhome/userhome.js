@@ -1,4 +1,5 @@
 import UserMainCard from "./usermaincard/usermaincard";
+import "./userhome.css";
 const content = {
   monthlyIncome: "Monthly Income",
   MTD: "mtd ki value",

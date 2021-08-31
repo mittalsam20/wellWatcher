@@ -10,8 +10,8 @@ import "./cards.css";
 
 const useStyles = makeStyles({
   root: {
-    minWidth: 610,
-    maxWidth: 610,
+    minWidth: "80%",
+    maxWidth: "80%",
     maxHeight: 700,
     padding: 10,
   },
