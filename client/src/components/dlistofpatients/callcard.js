@@ -12,18 +12,19 @@ import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import Slide from "@material-ui/core/Slide";
-import {
-  recContext,
-  recurldata,
-  mlContext,
-  durContext,
-} from "../../pages/homepage/homepage";
+// import {
+//   recContext,
+//   recurldata,
+//   mlContext,
+//   durContext,
+// } from "../../pages/homepage/homepage";
 import GetAppRoundedIcon from "@material-ui/icons/GetAppRounded";
 import React, { useContext, useEffect, useState } from "react";
 import { updateRecContext } from "./listofcalls";
 import axios from "axios";
-import { saveAs } from "file-saver";
-
+// import { saveAs } from "file-saver";
+import ArchiveIcon from "@material-ui/icons/Archive";
+import UnarchiveIcon from "@material-ui/icons/Unarchive";
 // import CardActionArea from "@material-ui/core/CardActionArea";
 // import CardActions from "@material-ui/core/CardActions";
 
@@ -126,66 +127,66 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 });
 
 const CallCard = (props) => {
-  const { temp, setTemp } = useContext(recurldata); //url link for current selected video
-  const { curRec, setCurRec } = useContext(recContext); // contains key for cur rec then transffered to all comp
-  const { mlData, setMldata } = useContext(mlContext); //all mldata for current recording
-  const { filrecs, setFilRecs } = useContext(updateRecContext); //filtered recording for current user
+  // const { temp, setTemp } = useContext(recurldata); //url link for current selected video
+  // const { curRec, setCurRec } = useContext(recContext); // contains key for cur rec then transffered to all comp
+  // const { mlData, setMldata } = useContext(mlContext); //all mldata for current recording
+  // const { filrecs, setFilRecs } = useContext(updateRecContext); //filtered recording for current user
   const [editopen, setEditOpen] = useState(false); //switch for edit modal
   const [newName, setNewname] = useState("Cannot Be Empty" || "");
   const [delOpen, setDelopen] = useState(false); //switch for del alert modal
-  const { curDur, setCurDur } = useContext(durContext);
-  const getTxt = async (a, b, c) => {
-    console.log(a, b, c);
-    const summaryres = await axios.get(a);
-    const audiores = await axios.get(b);
-    const pdfres = await axios.get(c);
-    setMldata({
-      summarytxt: summaryres.data || "No Summary Extracted Yet",
-      audiotxt: audiores.data || "No Transcription Found Yet",
-      pdfurl: pdfres.data,
-    });
-    console.log("text ka data", mlData.audiotxt);
-  };
+  // const { curDur, setCurDur } = useContext(durContext);
+  // const getTxt = async (a, b, c) => {
+  //   console.log(a, b, c);
+  //   const summaryres = await axios.get(a);
+  //   const audiores = await axios.get(b);
+  //   const pdfres = await axios.get(c);
+  //   setMldata({
+  //     summarytxt: summaryres.data || "No Summary Extracted Yet",
+  //     audiotxt: audiores.data || "No Transcription Found Yet",
+  //     pdfurl: pdfres.data,
+  //   });
+  //   console.log("text ka data", mlData.audiotxt);
+  // };
 
-  const retUrl = async () => {
-    const res = await axios.get("/app/getrecurl");
-    const data = await res.data;
-    const response = await axios.get("/app/main", {
-      withCredentials: true,
-    });
-    const userdata = await response.data;
-    const userRecs = data.filter((rec) => rec.user === userdata._id);
-    setFilRecs(userRecs);
-  };
+  // const retUrl = async () => {
+  //   const res = await axios.get("/app/getrecurl");
+  //   const data = await res.data;
+  //   const response = await axios.get("/app/main", {
+  //     withCredentials: true,
+  //   });
+  //   const userdata = await response.data;
+  //   const userRecs = data.filter((rec) => rec.user === userdata._id);
+  //   setFilRecs(userRecs);
+  // };
 
-  useEffect(() => {
-    console.log(mlData);
-  }, [mlData]);
+  // useEffect(() => {
+  //   console.log(mlData);
+  // }, [mlData]);
 
-  useEffect(() => {
-    var data = JSON.stringify({
-      recordingFileName: newName.concat(".webm"),
-    });
-    var config = {
-      method: "patch",
-      url: `/app/rename/${props.Key}`,
-      headers: {
-        "Content-Type": "application/json",
-      },
-      data: data,
-    };
+  // useEffect(() => {
+  //   var data = JSON.stringify({
+  //     recordingFileName: newName.concat(".webm"),
+  //   });
+  //   var config = {
+  //     method: "patch",
+  //     url: `/app/rename/${props.Key}`,
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     data: data,
+  //   };
 
-    axios(config)
-      .then(function (response) {
-        console.log(JSON.stringify(response.data));
-        retUrl();
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  }, [newName]);
+  //   axios(config)
+  //     .then(function (response) {
+  //       console.log(JSON.stringify(response.data));
+  //       retUrl();
+  //     })
+  //     .catch(function (error) {
+  //       console.log(error);
+  //     });
+  // }, [newName]);
 
-  console.log("inside callcard", temp);
+  // console.log("inside callcard", temp);
 
   const classes = useStyles();
   // console.log("recirding ka name", props.name);
@@ -278,18 +279,18 @@ const CallCard = (props) => {
               Cancel
             </Button>
             <Button
-              onClick={() => {
-                axios
-                  .delete(`app/delrecurl/${props.Key}`)
-                  .then((res) => {
-                    console.log(JSON.stringify(res.data));
-                    retUrl();
-                  })
-                  .catch((err) => {
-                    console.log(err);
-                  });
-                setDelopen(false);
-              }}
+              // onClick={() => {
+              //   axios
+              //     .delete(`app/delrecurl/${props.Key}`)
+              //     .then((res) => {
+              //       console.log(JSON.stringify(res.data));
+              //       retUrl();
+              //     })
+              //     .catch((err) => {
+              //       console.log(err);
+              //     });
+              //   setDelopen(false);
+              // }}
               color="primary"
             >
               Delete
@@ -305,31 +306,31 @@ const CallCard = (props) => {
     <>
       <Card
         className={classes.root}
-        style={{
-          backgroundColor: curRec === props.tid && "rgba(180,180,180,1)",
-        }}
+        // style={{
+        //   backgroundColor: curRec === props.tid && "rgba(180,180,180,1)",
+        // }}
       >
         <Button
-          onClick={() => {
-            setTemp(`/app${props.url}`);
-            setCurDur(props.recordingDuration);
+        // onClick={() => {
+        //   setTemp(`/app${props.url}`);
+        //   setCurDur(props.recordingDuration);
 
-            setCurRec(props.Key);
-            console.log(temp);
-            getTxt(
-              `/ml/return-summary/${props.originalName
-                .substring(0, props.originalName.length - 5)
-                .concat("_summary.txt")}`,
-              `/ml/return-transcript/${props.originalName
-                .substring(0, props.originalName.length - 5)
-                .concat(".txt")}`,
-              `/ml/return-presentation/${props.originalName
-                .substring(0, props.originalName.length - 5)
-                .concat(".pdf")}`
-              // "http://34.133.119.75/ml/return-summary/recording_1625899142046_summary.txt"
-              // "http://localhost:5000/app/recording/recording_1625921327939.txt"
-            );
-          }}
+        //   setCurRec(props.Key);
+        //   console.log(temp);
+        //   getTxt(
+        //     `/ml/return-summary/${props.originalName
+        //       .substring(0, props.originalName.length - 5)
+        //       .concat("_summary.txt")}`,
+        //     `/ml/return-transcript/${props.originalName
+        //       .substring(0, props.originalName.length - 5)
+        //       .concat(".txt")}`,
+        //     `/ml/return-presentation/${props.originalName
+        //       .substring(0, props.originalName.length - 5)
+        //       .concat(".pdf")}`
+        //     // "http://34.133.119.75/ml/return-summary/recording_1625899142046_summary.txt"
+        //     // "http://localhost:5000/app/recording/recording_1625921327939.txt"
+        //   );
+        // }}
         >
           <CardContent
             style={{
@@ -361,11 +362,11 @@ const CallCard = (props) => {
           size="small"
           color="primary"
           className={classes.ebtn}
-          onClick={(e) => {
-            e.preventDefault();
-            setEditOpen(true);
-            console.log(editopen);
-          }}
+          // onClick={(e) => {
+          //   e.preventDefault();
+          //   setEditOpen(true);
+          //   console.log(editopen);
+          // }}
         >
           <EditIcon style={{ fontSize: "20px" }} />
         </Button>
@@ -374,13 +375,13 @@ const CallCard = (props) => {
           size="small"
           color="primary"
           className={classes.btn}
-          onClick={(e) => {
-            e.preventDefault();
-            console.log("ida ida", props.Key);
-            setDelopen(true);
+          // onClick={(e) => {
+          //   e.preventDefault();
+          //   console.log("ida ida", props.Key);
+          //   setDelopen(true);
 
-            console.log("ss");
-          }}
+          //   console.log("ss");
+          // }}
         >
           <DeleteIcon />
         </Button>
@@ -388,12 +389,12 @@ const CallCard = (props) => {
         <Button
           size="small"
           color="primary"
-          className={classes.dbtn}
-          onClick={(e) => {
-            e.preventDefault();
-            saveAs(`/app${props.url}`, props.name);
-            saveAs(mlData.pdfurl, props.name);
-          }}
+          // className={classes.dbtn}
+          // onClick={(e) => {
+          //   e.preventDefault();
+          //   saveAs(`/app${props.url}`, props.name);
+          //   saveAs(mlData.pdfurl, props.name);
+          // }}
         >
           <GetAppRoundedIcon />
         </Button>

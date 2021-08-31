@@ -9,7 +9,7 @@ import { useEffect, useState, useContext, createContext } from "react";
 import CallCard from "./callcard";
 import "./listofcalls.css";
 // import { userData } from "../../context";
-import axios from "axios";
+// import axios from "axios";
 
 const updateRecContext = createContext({
   filrecs: "",
@@ -18,54 +18,64 @@ const updateRecContext = createContext({
 
 const ListOfCalls = () => {
   const [root, setRoot] = useState({});
-  const [filrecs, setFilRecs] = useState([]);
+  // const [filrecs, setFilRecs] = useState([]);
   const [a, setA] = useState([]);
 
-  const dbvalue = { filrecs, setFilRecs };
+  // const dbvalue = { filrecs, setFilRecs };
 
-  const callSignPage = async () => {
-    try {
-      const res = await axios.get("/app/main", {
-        withCredentials: true,
-      });
-      const userdata = await res.data;
-      console.log("userdata listofcalls", userdata);
-      setRoot(userdata);
-      if (userdata) {
-        console.log("userdata is there in list of calls..!!");
-      } else {
-        console.log("NO USER FOUND..!!");
-      }
-    } catch (err) {
-      console.log("error i am finding", err);
-    }
-  };
+  // const callSignPage = async () => {
+  //   try {
+  //     const res = await axios.get("/app/main", {
+  //       withCredentials: true,
+  //     });
+  //     const userdata = await res.data;
+  //     console.log("userdata listofcalls", userdata);
+  //     setRoot(userdata);
+  //     if (userdata) {
+  //       console.log("userdata is there in list of calls..!!");
+  //     } else {
+  //       console.log("NO USER FOUND..!!");
+  //     }
+  //   } catch (err) {
+  //     console.log("error i am finding", err);
+  //   }
+  // };
 
-  const retUrl = async () => {
-    const res = await axios.get("/app/getrecurl");
-    const data = await res.data;
-    setA(data);
-  };
+  // const retUrl = async () => {
+  //   const res = await axios.get("/app/getrecurl");
+  //   const data = await res.data;
+  //   setA(data);
+  // };
 
-  useEffect(() => {
-    callSignPage();
-    retUrl();
-  }, []);
+  // useEffect(() => {
+  //   callSignPage();
+  //   retUrl();
+  // }, []);
 
-  useEffect(() => {
-    console.log("filtered se pehle all recs", a);
-    console.log("filtered se pehle root user", root);
-    const userRecs = a.filter((rec) => rec.user === root._id);
-    console.log("fitlered id recs", userRecs);
-    setFilRecs(userRecs);
-  }, [a, root]);
+  // useEffect(() => {
+  //   console.log("filtered se pehle all recs", a);
+  //   console.log("filtered se pehle root user", root);
+  //   const userRecs = a.filter((rec) => rec.user === root._id);
+  //   console.log("fitlered id recs", userRecs);
+  //   setFilRecs(userRecs);
+  // }, [a, root]);
 
-  useEffect(() => {}, [a, root, filrecs]);
+  // useEffect(() => {}, [a, root, filrecs]);
 
   // console.log("just before map", a);
   // console.log(Array.isArray(a));
+
+  const filrecs = [
+    {
+      _id: "2323232",
+      patientName: "samaksh",
+      date: "31-08-21",
+      duration: "sasas",
+    },
+  ];
   return (
-    <updateRecContext.Provider value={dbvalue}>
+    // value={dbvalue}
+    <updateRecContext.Provider>
       <div className="loc-container">
         <div className="loc">
           <h3
@@ -82,17 +92,17 @@ const ListOfCalls = () => {
         </div>
 
         {filrecs.map((rec) => {
-          const originalName = rec.recordingPath.slice(7);
+          {
+            /* const originalName = rec.recordingPath.slice(7); */
+          }
           return (
             <CallCard
               Key={rec._id}
               tid={rec._id}
-              name={rec.recordingFileName}
+              name={rec.patientName}
               date={rec.date}
-              url={rec.recordingUrl}
-              path={rec.recordingPath}
               recordingDuration={rec.duration}
-              originalName={originalName}
+              // originalName={originalName}
             />
           );
         })}
