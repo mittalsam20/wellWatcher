@@ -72,6 +72,12 @@ const ListOfCalls = () => {
       date: "31-08-21",
       duration: "sasas",
     },
+    {
+      _id: "2323232",
+      patientName: "po",
+      date: "31-08-2",
+      duration: "sasas",
+    },
   ];
   return (
     // value={dbvalue}
