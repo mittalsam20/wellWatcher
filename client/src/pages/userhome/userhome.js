@@ -2,11 +2,11 @@ import UserMainCard from "./usermaincard/usermaincard";
 import HomeGraph from "../../components/homegraph/homegraph";
 import "./userhome.css";
 const content = {
-  monthlyIncome: "Monthly Income",
-  MTD: "mtd ki value",
-  today: "today ki value",
-  totalInvestment: "Total investment so far",
-  totalSavings: "saving this year",
+  param1: "98",
+  param2: "98",
+  param3: "98",
+  param4: "98",
+  param5: "98",
 };
 
 const UserHome = () => {
@@ -16,7 +16,7 @@ const UserHome = () => {
         <UserMainCard
           patientName="Pateint Name"
           headingColor="green"
-          first={content.monthlyIncome}
+          first={content.param1}
         />
       </div>
       <div className="allgraph">

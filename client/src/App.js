@@ -4,7 +4,7 @@ import UserHome from "./pages/userhome/userhome";
 import UserAccount from "./pages/useraccount/useraccount";
 import NavBar from "./components/navbar/navbar";
 import DoctorHome from "./pages/doctorhome/doctorhome";
-
+import LoginPage from "./pages/loginpage/logsign";
 const App = () => {
   return (
     <>
@@ -12,7 +12,7 @@ const App = () => {
         <div>
           <NavBar />
           <Switch>
-            {/* <Route path="/" component={login} exact></Route> */}
+            <Route path="/" component={LoginPage} exact></Route>
             <Route path="/home" component={UserHome} exact></Route>
             <Route path="/account" component={UserAccount} exact></Route>
             {/* <Route path="/doctorHome" component={HomePage} exact></Route> */}
