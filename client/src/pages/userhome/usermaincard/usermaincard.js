@@ -1,12 +1,11 @@
-import { makeStyles } from "@material-ui/core/styles";
-import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
+import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
-import { Doughnut, Line } from "react-chartjs-2";
 // import Button from "@material-ui/core/Button";
-import "./cards.css";
+import Card from "@material-ui/core/Card";
 
-// 1.50_Crore
+import { Doughnut, Line } from "react-chartjs-2";
+import "./cards.css";
 
 const useStyles = makeStyles({
   root: {
@@ -17,7 +16,7 @@ const useStyles = makeStyles({
   },
   cardInnerCont: {
     display: "flex",
-    justifyContent: "space-between",
+    justifyContent: "space-around",
   },
 });
 
@@ -29,7 +28,12 @@ const UserMainCard = (props) => {
       <Card className={`${classes.root} home-cards`}>
         <CardContent className={`${classes.cardInnerCont}`}>
           <div>
-            <img src="" alt="Patient_Photo" srcset="" />
+            <img
+              src="images/male.jpeg"
+              alt="Patient_Photo"
+              srcset=""
+              style={{ borderRadius: "50%", height: "150px", width: "180px" }}
+            />
           </div>
           <div>
             <Typography

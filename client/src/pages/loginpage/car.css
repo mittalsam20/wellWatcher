@@ -1,0 +1,134 @@
+.first {
+    width: 100%;
+    /* background-color: blue; */
+    height: 100%;
+    background: rgba(0, 0, 0, .4)url(./images/13.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: darken;
+}
+
+.first h1 {
+    position: absolute;
+    top: 30px;
+    left: 150px;
+    margin: 0px;
+    font-weight: 700;
+    font-size: 40px;
+    color: white;
+}
+
+.first span {
+    font-weight: 900 !important;
+    color: black;
+    font-size: 70px;
+}
+
+.car-contain {
+    height: 100vh;
+}
+
+.sec {
+    width: 100%;
+    /* background-color: blue; */
+    height: 100%;
+    background: rgba(0, 0, 0, .3)url(./images/ch.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: darken;
+}
+
+.sec h1 {
+    margin: 40px;
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+    font-weight: 700;
+    color: white;
+}
+
+.sec span {
+    font-weight: 900 !important;
+    color: black;
+    font-size: 70px;
+}
+
+.third {
+    width: 100%;
+    /* background-color: blue; */
+    height: 100%;
+    background: rgba(0, 0, 0, .3)url(./images/33.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: darken;
+}
+
+.third h1 {
+    position: absolute;
+    bottom: 130px;
+    left: 50px;
+    margin: 50px;
+    font-weight: 700;
+    color: white;
+}
+
+.third span {
+    font-weight: 900 !important;
+    color: black;
+    font-size: 70px;
+}
+
+.fourth {
+    width: 100%;
+    /* background-color: blue; */
+    height: 100%;
+    background: rgba(0, 0, 0, .4)url(./images/14.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: darken;
+}
+
+.fourth h1 {
+    position: absolute;
+    bottom: 80px;
+    left: 5px;
+    margin: 30px;
+    font-weight: 700;
+    color: white;
+}
+
+.fourth span {
+    font-weight: 900 !important;
+    color: black;
+    font-size: 70px;
+}
+
+.fifth {
+    width: 100%;
+    /* background-color: blue; */
+    height: 100%;
+    background: rgba(0, 0, 0, .2)url(./images/6.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: darken;
+}
+
+.fifth h1 {
+    position: absolute;
+    top: 50px;
+    left: 10px;
+    margin: 40px;
+    font-weight: 700;
+    color: white;
+}
+
+.fifth span {
+    font-weight: 900;
+    color: palevioletred;
+    font-size: 70px;
+}
