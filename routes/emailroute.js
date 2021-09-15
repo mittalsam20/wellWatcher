@@ -1,7 +1,9 @@
-const express = require("express")
-const router = express.Router();
 const bodyParser = require("body-parser")
 const fetch = require("node-fetch");
+const express = require("express")
+const router = express.Router();
+
+
 router.use(bodyParser.urlencoded({ extended: false }));
 
 router.post("/selfproxy/:Email", (req, res) => {

@@ -1,10 +1,11 @@
-import "./App.css";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import UserHome from "./pages/userhome/userhome";
 import UserAccount from "./pages/useraccount/useraccount";
-import NavBar from "./components/navbar/navbar";
 import DoctorHome from "./pages/doctorhome/doctorhome";
 import LoginPage from "./pages/loginpage/logsign";
+import UserHome from "./pages/userhome/userhome";
+import NavBar from "./components/navbar/navbar";
+import "./App.css";
+
 const App = () => {
   return (
     <>

@@ -16,11 +16,6 @@ const Car = () => {
         infinite={true}
         className="car-contain"
       >
-        <div className=" third">
-          <h1>
-            <span>ChildCare</span> Has Never Been So Easy!
-          </h1>
-        </div>
         <div className=" fourth">
           <h1>
             Taking <span>Care </span> of children as

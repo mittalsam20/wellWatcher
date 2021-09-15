@@ -367,8 +367,8 @@ const LogSign = () => {
           }
           {forgotpass()}
 
-          <h1>CareTakers</h1>
-          <h5>That you need!</h5>
+          <h1>WellWatcher</h1>
+          {/* <h5>That you need!</h5> */}
           <section className="main">
             <div className="form_wrapper">
               <input
