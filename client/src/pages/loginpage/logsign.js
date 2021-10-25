@@ -41,7 +41,7 @@ const LogSign = () => {
 
   const callSignPage = async () => {
     try {
-      const res = await axios.get("/app/main", {
+      const res = await axios.get("http://localhost:5000/app/main", {
         withCredentials: true,
       });
       const userdata = await res.data;
@@ -64,7 +64,9 @@ const LogSign = () => {
   // -----------------------EMAIL VALIDATION------------------------
 
   const EmailApi = async (Email) => {
-    const res = await axios.post(`/app/selfproxy/${Email}`);
+    const res = await axios.post(
+      `http://localhost:5000/app/selfproxy/${Email}`
+    );
     // console.log("ressssss", res.data);
     // console.log("status", res.status);
     const data = await res.data;
@@ -195,7 +197,7 @@ const LogSign = () => {
                   e.preventDefault();
                   console.log(mailedotp);
                   axios
-                    .get(`/app/forgotpass/${forEmail}`)
+                    .get(`http://localhost:5000/app/forgotpass/${forEmail}`)
                     .then(function (response) {
                       setforuser(response.data);
                       console.log(JSON.stringify(response.data));
@@ -268,7 +270,7 @@ const LogSign = () => {
 
                     var config = {
                       method: "patch",
-                      url: `/app/resetpass/${forUser._id}`,
+                      url: `http://localhost:5000/app/resetpass/${forUser._id}`,
                       headers: {
                         "Content-Type": "application/json",
                       },
@@ -432,7 +434,7 @@ const LogSign = () => {
                       };
                       console.log(loginreg);
                       axios
-                        .post("/app/login", loginreg, {
+                        .post("http://localhost:5000/app/login", loginreg, {
                           withCredentials: true,
                         })
                         .then((res) => {
@@ -529,7 +531,7 @@ const LogSign = () => {
                     onClick={(e) => {
                       e.preventDefault();
                       // console.log("clicked");
-                      EmailApi(InputEmail);
+                      // EmailApi(InputEmail);
                       console.log(emailVal, passCheck);
                       if (
                         emailVal &&
@@ -543,7 +545,7 @@ const LogSign = () => {
                         };
                         console.log(reg);
                         axios
-                          .post("/app/signup", reg)
+                          .post("http://localhost:5000/app/signup", reg)
                           .then((res) => {
                             console.log(
                               "seeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
