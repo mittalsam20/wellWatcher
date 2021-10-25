@@ -18,14 +18,15 @@ const Car = () => {
       >
         <div className=" fourth">
           <h1>
-            Taking <span>Care </span> of children as
+            Taking <span>Care </span> of patients as
             <br />
-            they are our own.
+            they are our own family members.
           </h1>
         </div>
         <div className=" first">
           <h1>
-            You deserve a <span> break</span> We'll take care of the kids.
+            Nurses & Doctors deserve a <span> break</span> Let us make your work
+            easy.
           </h1>
         </div>
         <div className=" sec">
@@ -37,7 +38,7 @@ const Car = () => {
         </div>
         <div className=" fifth">
           <h1>
-            Your <span>Baby </span> is in safe hands
+            You are in <span>safe </span> hands.
           </h1>
         </div>
       </AutoplaySlider>
