@@ -1,0 +1,15 @@
+.down {
+    display: flex;
+    flex-direction: column;
+}
+
+.ltr {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.check {
+    display: flex;
+    margin-right: 4px;
+}

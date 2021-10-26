@@ -3,9 +3,11 @@ import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 // import Button from "@material-ui/core/Button";
 import Card from "@material-ui/core/Card";
+import Checkbox from "@material-ui/core/Checkbox";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
 
 import { Doughnut, Line } from "react-chartjs-2";
-// import "./cards.css";
+import "./meds.css";
 
 const useStyles = makeStyles({
   root: {
@@ -13,10 +15,6 @@ const useStyles = makeStyles({
     maxWidth: "80%",
     maxHeight: 700,
     padding: 10,
-  },
-  cardInnerCont: {
-    display: "flex",
-    justifyContent: "space-around",
   },
 });
 
@@ -27,50 +25,35 @@ const Meds = (props) => {
     <>
       <Card className={`${classes.root} home-cards`}>
         <CardContent className={`${classes.cardInnerCont}`}>
-          <div>
-            <img
-              src="images/male.jpeg"
-              alt="Patient_Photo"
-              srcset=""
-              style={{ borderRadius: "50%", height: "150px", width: "180px" }}
-            />
-          </div>
-          <div>
-            <Typography
-              gutterBottom
-              variant="h5"
-              component="h2"
-              style={{ color: headingColor }}
-            >
-              Hello Wellwisher of {patientName}
-            </Typography>
-            <div className="outerlatestUpdate">
-              <Typography variant="body2" component="p">
-                <div className="innerlatestUpdate">
-                  <div>
-                    <strong> Oxygen Level: </strong> {first} <br />
-                  </div>
-                  <div>
-                    <strong> Body Temperature: </strong> {second} <br />
-                  </div>
-                </div>
-                <div className="innerlatestUpdate">
-                  <div>
-                    <strong> Weight: </strong> {first} <br />
-                  </div>
-                  <div>
-                    <strong>Heart Rate: </strong> {second} <br />
-                  </div>
-                </div>
-                <div className="innerlatestUpdate">
-                  <div>
-                    <strong> Blood Pressure: </strong> {first} <br />
-                  </div>
-                  <div>
-                    <strong>Sugar Level: </strong> {second} <br />
-                  </div>
-                </div>
-              </Typography>
+          <div className="ltr">
+            <div className="down">
+              <h3>Medicine Name</h3>
+              <p>Crocin</p>
+            </div>
+            <div className="down">
+              <h3>Dosage</h3>
+            </div>
+            <div className="check">
+              <div className="check">
+                <FormControlLabel
+                  control={<Checkbox defaultChecked />}
+                  label="B"
+                  labelPlacement="top"
+                />
+                <FormControlLabel
+                  control={<Checkbox defaultChecked />}
+                  label="L"
+                  labelPlacement="top"
+                />
+                <FormControlLabel
+                  control={<Checkbox defaultChecked />}
+                  label="D"
+                  labelPlacement="top"
+                />
+              </div>
+            </div>
+            <div className="down">
+              <h3>Instructions</h3>
             </div>
           </div>
         </CardContent>

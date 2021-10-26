@@ -16,14 +16,14 @@ const useStyles = makeStyles({
 });
 
 const ldata = {
-  labels: ["1", "2", "3", "4", "5", "6"],
+  labels: ["1", "2", "3", "4", "5", "6", "7"],
   datasets: [
     {
-      label: "# of Votes",
-      data: [12, 19, 3, 5, 2, 3],
+      label: "Stat Name",
+      data: [12, 19, 3, 5, 2, 3, 100],
       fill: false,
       backgroundColor: "rgb(255, 99, 132)",
-      borderColor: "rgba(255, 99, 132, 0.2)",
+      borderColor: "rgba(255, 99, 132, 0.9)",
     },
   ],
 };
