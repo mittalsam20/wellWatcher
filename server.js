@@ -33,6 +33,47 @@ mongoose.connect(process.env.DATABASE_ACCESS, {
     .then(() => { console.log("Database connected..!!!") })
     .catch((e) => { console.log(e); });
 
+
+//Multer Portion
+app.use("/recording", express.static("upload"));
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, "./upload")
+    },
+    filename: (req, file, cb) => {
+        cb(null, `${file.fieldname}_${Date.now()}${path.extname(file.originalname)}`)
+    }
+})
+const upload = multer({
+    storage: storage
+        // limits: { fileSize: 1024 * 1024 * 5 }
+})
+
+// Upload API
+app.post("/app/upload", upload.single("recording"), (req, res) => {
+    console.log(req.file);
+    const recording_url = `/recording/${req.file.filename}`;
+    const newrecording = new recording({
+        recordingFileName: req.file.filename,
+        recordingPath: req.file.path,
+        recordingUrl: recording_url
+    })
+    console.log(req.file.path);
+    console.log(recording_url);
+    newrecording.save().then(data => {
+            res.status(200).json(data);
+            // console.log(json(data));
+        }).catch(error => { res.status(500).json(error) })
+        // res.status(200).json({
+        //     success: 1,
+        //     recording_url: recording_url,
+        //     recodring_path:req.file.path
+        // })
+})
+
+
+
+
 //Calling Of All Routes
 app.use("/app", routerUrls);
 app.use("/app", authRoute);

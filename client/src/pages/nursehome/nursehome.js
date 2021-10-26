@@ -105,7 +105,7 @@ const NurseHome = () => {
         container
         className={classes.root}
         spacing={2}
-        style={{ flexWrap: "nowrap", maxWidth: "100%" }}
+        style={{ flexWrap: "nowrap", maxWidth: "100%", marginTop: "10px" }}
       >
         <Grid item>
           <ListOfCalls />
