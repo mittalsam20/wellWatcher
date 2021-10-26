@@ -1,6 +1,8 @@
 import ListOfCalls from "../../components/dlistofpatients/listofcalls";
 import UserMainCard from "../../components/usermaincard/usermaincard";
 import HomeGraph from "../../components/homegraph/homegraph";
+import MedFolder from "../../components/medicine/medfolder";
+
 import "./doctorhome.css";
 const DoctorHome = () => {
   return (
@@ -10,6 +12,7 @@ const DoctorHome = () => {
       </div>
       <div>
         <UserMainCard />
+        <MedFolder />
         <div>
           <HomeGraph />
           <HomeGraph />
