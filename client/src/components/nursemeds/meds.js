@@ -31,28 +31,33 @@ const Meds = (props) => {
             </div>
             <div className="down">
               <h3>Dosage</h3>
+              <p>1 tablet after food</p>
             </div>
             <div className="check">
               <div className="check">
                 <FormControlLabel
-                  control={<Checkbox defaultChecked />}
+                  control={<Checkbox />}
+                  disabled={true}
                   label="B"
                   labelPlacement="top"
                 />
                 <FormControlLabel
-                  control={<Checkbox defaultChecked />}
+                  control={<Checkbox />}
                   label="L"
+                  disabled={true}
                   labelPlacement="top"
                 />
                 <FormControlLabel
-                  control={<Checkbox defaultChecked />}
+                  control={<Checkbox />}
                   label="D"
+                  disabled={true}
                   labelPlacement="top"
                 />
               </div>
             </div>
             <div className="down">
               <h3>Instructions</h3>
+              <p>when fever arises</p>
             </div>
           </div>
         </CardContent>

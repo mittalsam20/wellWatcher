@@ -22,8 +22,8 @@
 import ListOfCalls from "../../components/dlistofpatients/listofcalls";
 import UserMainCard from "../../components/usermaincard/usermaincard";
 import HomeGraph from "../../components/homegraph/homegraph";
-import MedFolder from "../../components/medicine/medfolder";
-import "./doctorhome.css";
+import MedFolder from "../../components/nursemeds/meds";
+import "./nursehome.css";
 
 import { createContext, useState, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
@@ -56,7 +56,7 @@ const recurldata = createContext({
   setTemp: () => {},
 });
 //-----------------------------HOMEPAGE RAFCE
-const DoctorHome = () => {
+const NurseHome = () => {
   // const fetchvideo = async () => {
   //   try {
   //     // const vidblob = transfer();
@@ -122,7 +122,6 @@ const DoctorHome = () => {
           <div className="rightdoc">
             <UserMainCard />
             <MedFolder />
-
             <div>
               <HomeGraph />
               <HomeGraph />
@@ -133,20 +132,20 @@ const DoctorHome = () => {
           </div>
         </Grid>
         {/* <Grid
-            item
-            style={{
-              paddingLeft: "0",
-              paddingRight: "0",
-              maxWidth: "25%",
-              flexShrink: "3",
-            }}
-          >
-            <Notes />
-          </Grid> */}
+                        item
+                        style={{
+                          paddingLeft: "0",
+                          paddingRight: "0",
+                          maxWidth: "25%",
+                          flexShrink: "3",
+                        }}
+                      >
+                        <Notes />
+                      </Grid> */}
       </Grid>
     </>
     // </recurldata.Provider>
   );
 };
 
-export default DoctorHome;
+export default NurseHome;
