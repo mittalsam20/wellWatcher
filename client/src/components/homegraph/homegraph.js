@@ -11,6 +11,7 @@ const useStyles = makeStyles({
     minWidth: 610,
     maxWidth: 610,
     maxHeight: 400,
+    margin: 15,
   },
 });
 

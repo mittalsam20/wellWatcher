@@ -27,14 +27,15 @@ const routerUrls = require("./routes/emailroute");
 //DB Connection
 dotenv.config();
 mongoose.connect(process.env.DATABASE_ACCESS, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-}).then(() => { console.log("Database connected..!!!") }).catch((e) => { console.log(e); });
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+    })
+    .then(() => { console.log("Database connected..!!!") })
+    .catch((e) => { console.log(e); });
 
 //Calling Of All Routes
 app.use("/app", routerUrls);
 app.use("/app", authRoute);
-
 
 app.use((req, res, next) => {
     res.status(404).json({

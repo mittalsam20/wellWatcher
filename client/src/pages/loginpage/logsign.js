@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from "react";
-// import { useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 import emailjs from "emailjs-com";
 import bcrypt from "bcryptjs";
@@ -23,7 +23,7 @@ const LogSign = () => {
   const { rootUser, setRootUser } = useContext(userData);
   console.log("inside login page", rootUser);
 
-  // const history = useHistory();
+  const history = useHistory();
   const [InputEmail, setInputEmail] = useState("");
   const [InputPass, setInputPass] = useState("");
   const [InputConfirmPass, setInputConfirmPass] = useState("");
@@ -41,7 +41,7 @@ const LogSign = () => {
 
   const callSignPage = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/app/main", {
+      const res = await axios.get("/app/main", {
         withCredentials: true,
       });
       const userdata = await res.data;
@@ -64,9 +64,7 @@ const LogSign = () => {
   // -----------------------EMAIL VALIDATION------------------------
 
   const EmailApi = async (Email) => {
-    const res = await axios.post(
-      `http://localhost:5000/app/selfproxy/${Email}`
-    );
+    const res = await axios.post(`/app/selfproxy/${Email}`);
     // console.log("ressssss", res.data);
     // console.log("status", res.status);
     const data = await res.data;
@@ -197,7 +195,7 @@ const LogSign = () => {
                   e.preventDefault();
                   console.log(mailedotp);
                   axios
-                    .get(`http://localhost:5000/app/forgotpass/${forEmail}`)
+                    .get(`/app/forgotpass/${forEmail}`)
                     .then(function (response) {
                       setforuser(response.data);
                       console.log(JSON.stringify(response.data));
@@ -270,7 +268,7 @@ const LogSign = () => {
 
                     var config = {
                       method: "patch",
-                      url: `http://localhost:5000/app/resetpass/${forUser._id}`,
+                      url: `/app/resetpass/${forUser._id}`,
                       headers: {
                         "Content-Type": "application/json",
                       },
@@ -434,14 +432,14 @@ const LogSign = () => {
                       };
                       console.log(loginreg);
                       axios
-                        .post("http://localhost:5000/app/login", loginreg, {
+                        .post("/app/login", loginreg, {
                           withCredentials: true,
                         })
                         .then((res) => {
                           console.log("sam var", res.data);
                           if (res.status === 200) {
                             // callSignPage();
-                            // history.push("/home");
+                            history.push("/home");
                             setAlboxcont({
                               open: true,
                               message: res.data.message,
@@ -545,7 +543,7 @@ const LogSign = () => {
                         };
                         console.log(reg);
                         axios
-                          .post("http://localhost:5000/app/signup", reg)
+                          .post("/app/signup", reg)
                           .then((res) => {
                             console.log(
                               "seeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",

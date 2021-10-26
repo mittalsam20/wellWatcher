@@ -1,4 +1,4 @@
-import UserMainCard from "./usermaincard/usermaincard";
+import UserMainCard from "../../components/usermaincard/usermaincard";
 import HomeGraph from "../../components/homegraph/homegraph";
 import "./userhome.css";
 const content = {
@@ -24,7 +24,6 @@ const UserHome = () => {
         <HomeGraph />
         <HomeGraph />
         <HomeGraph />
-
         <HomeGraph />
       </div>
     </div>

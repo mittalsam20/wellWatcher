@@ -30,11 +30,11 @@ router.post("/signup", async(req, res) => {
         const salt = await bcrypt.genSalt(10);
         const hashedPass = await bcrypt.hash(req.body.password, salt);
         console.log(hashedPass);
-        // const userExist = await user.findOne({ emailId: req.body.emailId });
-        // console.log(userExist);
-        // if (userExist) {
-        //     res.status(400).json({ message: "Email-Id Already Registered..!!" });
-        // }
+        const userExist = await user.findOne({ emailId: req.body.emailId });
+        console.log(userExist);
+        if (userExist) {
+            res.status(400).json({ message: "Email-Id Already Registered..!!" });
+        }
         console.log("1")
         const newUser = new user({
             fullName: req.body.fullName,
