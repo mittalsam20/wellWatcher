@@ -72,8 +72,6 @@ app.post("/app/upload", upload.single("recording"), (req, res) => {
 })
 
 
-
-
 //Calling Of All Routes
 app.use("/app", routerUrls);
 app.use("/app", authRoute);
