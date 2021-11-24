@@ -11,6 +11,10 @@ const nurseSchema = new mongoose.Schema({
         required: true,
         unique: true
     },
+    adminRights: {
+        type: Boolean,
+        default: false
+    },
     password: { type: String, required: true },
     tokens: [{
         token: {
@@ -28,4 +32,4 @@ userSchema.methods.generateAuthToken = async function() {
     return curtoken;
 }
 
-module.exports = mongoose.model("nurse", usernurseSchemaSchema);
+module.exports = mongoose.model("nurse", nurseSchema);

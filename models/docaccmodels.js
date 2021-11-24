@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
 
-const nurseSchema = new mongoose.Schema({
+const docSchema = new mongoose.Schema({
     fullName: {
         type: String,
         required: true,
@@ -10,6 +10,10 @@ const nurseSchema = new mongoose.Schema({
         type: String,
         required: true,
         unique: true
+    },
+    adminRights: {
+        type: Boolean,
+        default: true
     },
     password: { type: String, required: true },
     tokens: [{
@@ -28,4 +32,4 @@ userSchema.methods.generateAuthToken = async function() {
     return curtoken;
 }
 
-module.exports = mongoose.model("nurse", usernurseSchemaSchema);
+module.exports = mongoose.model("doc", docSchema);
