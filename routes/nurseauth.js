@@ -9,7 +9,7 @@ const cors = require("cors");
 router.use(cors());
 router.use(bodyParser.urlencoded({ extended: true }));
 const nurse = require("../models/nurseaccmodel");
-// const AuthMid = require("../middleware/authmid");
+const AuthMid = require("../middleware/authmid");
 
 
 router.post("/adminsignup", async(req, res) => {

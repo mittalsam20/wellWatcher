@@ -8,8 +8,8 @@ const cors = require("cors");
 //Initializing
 router.use(cors());
 router.use(bodyParser.urlencoded({ extended: true }));
-const nurse = require("../models/nurseaccmodel");
-// const AuthMid = require("../middleware/authmid");
+const doc = require("../models/docaccmodels");
+const AuthMid = require("../middleware/authmid");
 
 
 router.post("/adminsignup", async(req, res) => {
@@ -29,19 +29,19 @@ router.post("/adminsignup", async(req, res) => {
         const salt = await bcrypt.genSalt(10);
         const hashedPass = await bcrypt.hash(req.body.password, salt);
         console.log(hashedPass);
-        const userExist = await nurse.findOne({ emailId: req.body.emailId });
+        const userExist = await doc.findOne({ emailId: req.body.emailId });
         console.log(userExist);
         if (userExist) {
             res.status(400).json({ message: "Email-Id Already Registered..!!" });
         }
         console.log("1")
-        const newNurse = new nurse({
+        const newDoc = new doc({
             fullName: req.body.fullName,
             emailId: req.body.emailId,
             password: hashedPass,
         });
         console.log(req.body.emailId);
-        newNurse
+        newDoc
             .save()
             .then((data) => {
                 res.status(200).json({
@@ -70,7 +70,7 @@ router.post("/login", async(req, res) => {
                 .status(400)
                 .json({ message: "Please Fill All The Details..!!" });
         }
-        const userLogin = await nurse.findOne({ emailId: req.body.logEmail });
+        const userLogin = await doc.findOne({ emailId: req.body.logEmail });
         if (userLogin === null) {
             console.log("inside null");
             res

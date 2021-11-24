@@ -21,8 +21,9 @@ app.use(express.urlencoded({ extended: false }));
 
 //Importing Routes
 const Port = process.env.PORT || 5000;
-const authRoute = require("./routes/auth");
-const routerUrls = require("./routes/emailroute");
+const userAuthRoute = require("./routes/userauth");
+const nurseAuthRoute = require("./routes/nurseauth");
+const docAuthRoute = require("./routes/docauth");
 
 //DB Connection
 dotenv.config();
@@ -73,8 +74,10 @@ app.post("/app/upload", upload.single("recording"), (req, res) => {
 
 
 //Calling Of All Routes
-app.use("/app", routerUrls);
-app.use("/app", authRoute);
+app.use("/app", userAuthRoute);
+app.use("/app", nurseAuthRoute);
+app.use("/app", docAuthRoute);
+
 
 app.use((req, res, next) => {
     res.status(404).json({

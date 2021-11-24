@@ -25,7 +25,7 @@ const docSchema = new mongoose.Schema({
     date: { type: Date, default: Date.now }
 })
 
-userSchema.methods.generateAuthToken = async function() {
+docSchema.methods.generateAuthToken = async function() {
     let curtoken = jwt.sign({ _id: this._id }, "illbethebestworkharder")
     this.tokens = this.tokens.concat({ token: curtoken })
     await this.save();
