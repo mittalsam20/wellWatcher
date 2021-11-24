@@ -18,6 +18,12 @@ import { userData } from "../context";
 import "./logsign.scss";
 import Car from "./car";
 
+import Radio from "@mui/material/Radio";
+import RadioGroup from "@mui/material/RadioGroup";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import FormControl from "@mui/material/FormControl";
+import FormLabel from "@mui/material/FormLabel";
+
 const LogSign = () => {
   //---------------------USESTATES--------------------------
   const { rootUser, setRootUser } = useContext(userData);
@@ -38,6 +44,10 @@ const LogSign = () => {
     type: "",
     dur: 1,
   });
+  const [type, setType] = useState("user");
+  const handleChange = (event) => {
+    setType(event.target.value);
+  };
 
   const callSignPage = async () => {
     try {
@@ -369,6 +379,28 @@ const LogSign = () => {
 
           <h1>WellWatcher</h1>
           {/* <h5>That you need!</h5> */}
+          <FormControl component="fieldset">
+            {/* <FormLabel component="legend">Gender</FormLabel> */}
+            <RadioGroup
+              aria-label="gender"
+              row
+              name="controlled-radio-buttons-group"
+              value={type}
+              onChange={handleChange}
+            >
+              <FormControlLabel value="user" control={<Radio />} label="User" />
+              <FormControlLabel
+                value="nurse"
+                control={<Radio />}
+                label="nurse"
+              />
+              <FormControlLabel
+                value="doctor"
+                control={<Radio />}
+                label="doctor"
+              />
+            </RadioGroup>
+          </FormControl>
           <section className="main">
             <div className="form_wrapper">
               <input
