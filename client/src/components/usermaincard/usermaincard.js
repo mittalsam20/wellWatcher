@@ -42,21 +42,21 @@ const UserMainCard = (props) => {
               component="h2"
               style={{ color: headingColor }}
             >
-              Hello Wellwisher of {patientName}
+              Hello Wellwisher of Rahul Gupta
             </Typography>
             <div className="outerlatestUpdate">
               <Typography variant="body2" component="p">
                 <div className="innerlatestUpdate">
                   <div>
-                    <strong> Oxygen Level: </strong> {first} <br />
+                    <strong> Oxygen Level: </strong> 99 <br />
                   </div>
                   <div>
-                    <strong> Body Temperature: </strong> {second} <br />
+                    <strong> Body Temperature: </strong> <br />
                   </div>
                 </div>
                 <div className="innerlatestUpdate">
                   <div>
-                    <strong> Weight: </strong> {first} <br />
+                    <strong> Weight: </strong> 76 <br />
                   </div>
                   <div>
                     <strong>Heart Rate: </strong> {second} <br />
@@ -64,7 +64,7 @@ const UserMainCard = (props) => {
                 </div>
                 <div className="innerlatestUpdate">
                   <div>
-                    <strong> Blood Pressure: </strong> {first} <br />
+                    <strong> Blood Pressure: </strong> 143 <br />
                   </div>
                   <div>
                     <strong>Sugar Level: </strong> {second} <br />
