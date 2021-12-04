@@ -20,11 +20,11 @@ const UserHome = () => {
         />
       </div>
       <div className="allgraph">
-        <HomeGraph />
-        <HomeGraph />
-        <HomeGraph />
-        <HomeGraph />
-        <HomeGraph />
+        <HomeGraph name="oxygen Level" data="1" />
+        <HomeGraph name="sugar Level" />
+        <HomeGraph name="blood Pressure Level" />
+        <HomeGraph name="weight Level" />
+        <HomeGraph name="Heart Rate" />
       </div>
     </div>
   );

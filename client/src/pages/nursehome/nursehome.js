@@ -122,7 +122,7 @@ const NurseHome = () => {
           <div className="rightdoc">
             <UserMainCard />
             <MedFolder />
-            <div>
+            <div className="graph">
               <HomeGraph />
               <HomeGraph />
               <HomeGraph />
